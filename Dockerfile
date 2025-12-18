@@ -1,5 +1,9 @@
 FROM ubuntu:16.04
 
+# Update sources to use old-releases (since 16.04 is EOL)
+RUN sed -i 's/archive.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list && \
+    sed -i 's/security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
+
 RUN apt-get update && apt-get install -y \
     wget=1.17.1-1ubuntu1 \
     curl=7.47.0-1ubuntu2 \
