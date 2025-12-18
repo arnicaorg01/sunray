@@ -10,7 +10,6 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Add an insecure executable
-COPY vulnerable.sh /usr/local/bin/vulnerable.sh
 RUN chmod +x /usr/local/bin/vulnerable.sh
 
 # Set default command (insecure script execution)
